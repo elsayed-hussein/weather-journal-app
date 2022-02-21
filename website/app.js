@@ -10,6 +10,7 @@ const zipCity = document.getElementById("city");
 const zipTemp = document.getElementById("temp");
 const disc = document.getElementById("description");
 const cont = document.getElementById("content");
+const generateBtn = document.getElementById("generate");
 
 let d = new Date();
 let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear();
@@ -40,7 +41,7 @@ const generateData = () => {
   });
 };
 
-document.getElementById("generate").addEventListener("click", generateData);
+generateBtn.addEventListener("click", generateData);
 
 const getData = async (zip) => {
   try {
