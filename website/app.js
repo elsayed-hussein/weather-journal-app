@@ -26,14 +26,14 @@ const generateData = () => {
         weather: [{ description }],
       } = zipData;
 
-      const info = {
+      const data = {
         newDate,
         city,
         temp: Math.round(temp),
         description,
         feelings,
       };
-      saverData(server + "/add", info);
+      saverData(server + "/add", data);
       update();
       document.getElementById("entry").style.opacity = 1;
     }
@@ -55,13 +55,13 @@ const getData = async (zip) => {
   }
 };
 
-const saverData = async (url, info) => {
+const saverData = async (url, dataInfo) => {
   const data = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(info),
+    body: JSON.stringify(dataInfo),
   });
 };
 
